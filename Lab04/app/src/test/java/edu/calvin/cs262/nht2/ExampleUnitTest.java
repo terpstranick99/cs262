@@ -1,4 +1,4 @@
-package edu.calvin.cs262.lab04;
+package edu.calvin.cs262.nht2;
 
 import org.junit.Test;
 

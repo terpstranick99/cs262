@@ -1,4 +1,4 @@
-package edu.calvin.cs262.lab04;
+package edu.calvin.cs262.nht2;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("edu.calvin.cs262.lab04", appContext.getPackageName());
+        assertEquals("edu.calvin.cs262.nht2", appContext.getPackageName());
     }
 }
