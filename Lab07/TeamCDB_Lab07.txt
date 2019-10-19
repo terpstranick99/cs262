@@ -1,0 +1,67 @@
+--This SQL script is Team C's Sensapp SQL Schema
+--
+--Drop previous versions of the tables if they exist, in reverse order of foreign keys.
+DROP TABLE IF EXISTS Favorite;
+DROP TABLE IF EXISTS History;
+DROP TABLE IF EXISTS Activity;
+DROP TABLE IF EXISTS User;
+
+--Create tables
+CREATE TABLE User (
+	ID integer PRIMARY KEY
+	);
+
+CREATE TABLE Activity(
+	ID integer PRIMARY KEY,
+	name varchar(30) NOT NULL,
+	);
+
+
+CREATE TABLE Favorite(
+	userID integer REFERENCES User(ID) PRIMARY KEY,
+	activityID integer REFERENCES Activity(ID) PRIMARY KEY
+	);
+	
+CREATE TABLE History(
+	ID integer PRIMARY KEY,
+	userID integer REFERENCES User(ID),
+	activityID integer REFERENCES Activity(ID),
+	timeStart timestamp,
+	timeEnd timestamp,
+	satisfaction integer
+	);
+	
+--Allow users to select data from the tables
+GRANT SELECT ON User TO PUBLIC;
+GRANT SELECT ON Activity TO PUBLIC;
+GRANT SELECT ON Favorite TO PUBLIC;
+GRANT SELECT ON History TO PUBLIC;
+
+--Add sample records
+INSERT INTO User VALUES (1);
+INSERT INTO User VALUES (2);
+
+INSERT INTO Activity (1, 'Breathe');
+INSERT INTO Activity (2, 'Fidget Cube');
+
+--User 2 favorites activity 1, Breathe
+INSERT INTO Favorite (2, 1);
+--User 1 favorites activity 1, Breathe
+INSERT INTO Favorite (1, 1);
+--User 1 favorites activity 2, Fidget Cube
+INSERT INTO Favorite (1, 2);
+
+INSERT INTO History (1, 1, 1, '2019-10-17 19:01:54', '2019-10-17 19:02:32', 5);
+INSERT INTO History (2, 2, 2, '2019-10-18 23:59:01', '2019-10-19 00:05:13', 1);
+
+
+
+
+
+
+
+
+
+
+
+ 
