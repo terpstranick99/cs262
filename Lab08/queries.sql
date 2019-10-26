@@ -31,4 +31,13 @@ SELECT name FROM Player WHERE emailAddress LIKE '%gmail%';
 
 -- 8.2 A
 SELECT PlayerFinishedGame.score, PlayerUnfinishedGame.score FROM PlayerFinishedGame, PlayerUnfinishedGame, 
-WHERE Player.name = 
+WHERE Player.ID = PlayerGame.playerID AND Player.name = 'The King' ORDER BY PlayerFinishedGame.cash DESC AND PlayerUnfinishedGame.cash DESC;
+
+-- 8.2 B
+SELECT Player.name FROM Player, PlayerUnfinishedGame, PlayerFinishedGame, Game WHERE Game.time = '2006-06-28 13:20:00' AND PlayerFinishedGame.gameID = Game.ID AND PlayerUnfinishedGame.gameID = Game.ID AND PlayerUnfinishedGame.playerID = Player.ID AND PlayerFinishedGame = Player.ID ORDER BY PlayerFinishedGame.cash DESC LIMIT 1;
+
+-- 8.2 C
+-- Prevents duplication
+
+-- 8.2 D
+-- When the table contains a foreign key which references its own primary key
