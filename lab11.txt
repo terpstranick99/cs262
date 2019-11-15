@@ -1,0 +1,1 @@
+Public variables could have been made private
