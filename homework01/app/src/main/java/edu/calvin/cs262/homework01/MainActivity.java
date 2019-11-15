@@ -1,7 +1,6 @@
 package edu.calvin.cs262.homework01;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,17 +11,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    public int operand1 = 0;
-    public int operand2 = 0;
-    public String my_operator;
+    private int operand1 = 0;
+    private int operand2 = 0;
+    private String my_operator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // This code creates the spinner.
-        Spinner spinner = findViewById(R.id.operator_spinner);
+        Spinner spinn er = findViewById(R.id.operator_spinner);
         if (spinner != null) {
             spinner.setOnItemSelectedListener(this);
         }
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
-        // This code creates the logic of the calculator
+    // This code creates the logic of the calculator
     public void calculateResult(View view) {
         EditText value1 = findViewById(R.id.value_1_entry);
         operand1 = Integer.parseInt(value1.getText().toString());
@@ -95,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Log.d("MainActivity", String.format("onPause. value1: %d, value2: %d, operator: %s", operand1, operand2, my_operator));
     }
 
+    @SuppressLint("DefaultLocale")
     @Override
     protected void onResume() {
         super.onResume();
