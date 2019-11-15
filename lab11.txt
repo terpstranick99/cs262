@@ -1,1 +1,29 @@
-Public variables could have been made private
+homework 1 -
+what i did
+gradle stuff updated
+Fixed issues with various import calls
+what i did not do
+A couple times studio wanted me to do something with "App is not indexable by Google Search..." but I ignored it
+Studio wanted me to get rid of or change the onClick method, but it was mistaken so I left it
+
+Homework 2:
+what i did
+gradle stuff updated
+I got rid of some unneeded import statements
+I changed the ellipse to an ellipse char
+what i did not do
+Studio didn't like "usesCleartextTraffic" but I need it
+A couple times studio wanted me to do something with "App is not indexable by Google Search..." but I ignored it
+Studio warned me about "On SDK vers 23 and up, you app data will be automaticaly=ly backed up..." but I ignored it
+Studio wanted me to change some variables from public to private again, but when I did so it broke the app so I left it
+
+
+Homework 3:
+what i did
+gradle stuff updated
+I got rid of unused methods
+I changed the ellipse to an ellipse char
+I got rid of unused import code
+I added constraints to the recyclerview
+I added @NonNull to @Overriden @NonNull parameters
+I got rid of some unused xml resources
